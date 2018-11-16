@@ -7,10 +7,6 @@ while IFS='' read -r line ; do
 done < "$1"
 
 for pid in $pids; do
-    wait $pid || let "RESULT=1"
+    wait $pid 
 done
 
-if [ "$RESULT" == "1" ];
-    then
-       exit 1
-fi
