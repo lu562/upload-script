@@ -13,10 +13,10 @@ done
 while IFS='' read -r line ; do{
     read -u 9
     {
-	    curl -sSO $line &
+	    curl -sSO $line 
 	    pids="$pids $!"
 	    echo -ne "\n" 1>&9
-	}
+	}&
 }
 done < "$1"
 
